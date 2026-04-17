@@ -1,4 +1,5 @@
-def converter_num(val: int | float):
+from typing import Union
+def converter_num(val: Union[int, float, str]):
     
     if(not val): return None
         
