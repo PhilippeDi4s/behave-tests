@@ -8,8 +8,15 @@ def definir_numeros(context, num1, num2):
 
 @when('eu os somo')
 def somar_numeros(context):
-    context.resultado = somar(context.num1, context.num2)
+    try:
+        context.resultado = somar(context.num1, context.num2)
+    except Exception as e:
+        context.error = TypeError(e)
 
 @then('o resutado deve ser {resultado_esperado}')
 def verificar_resultado(context, resultado_esperado):
     assert context.resultado == int(resultado_esperado)
+
+@then('o sistema deve retornar um erro de tipo')
+def verificar_erro(context):
+    assert isinstance(context.error, TypeError)
