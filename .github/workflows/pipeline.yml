@@ -1,4 +1,4 @@
-name: Testes com o Pytest
+name: Testes com o Behave
 
 on: [push, pull_request]
 
