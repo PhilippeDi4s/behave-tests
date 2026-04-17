@@ -39,12 +39,12 @@ Funcionalidade: Somar dois números
   Cenário: Validar erro ao somar número com string
     Dado que eu tenho dois números: 10 e "5"
     Quando eu os somo
-    Então o sistema deve retornar um erro de tipo
+    Então o sistema deve retornar um erro de tipo TypeError
 
   Cenário: Validar erro ao somar valores nulos (None)
     Dado que eu tenho dois números: None e 10
     Quando eu os somo
-    Então o sistema deve retornar um erro de tipo
+    Então o sistema deve retornar um erro de tipo ValueError
 
   Cenário: Soma de dois zeros
     Dado que eu tenho dois números: 0 e 0

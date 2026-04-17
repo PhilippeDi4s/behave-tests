@@ -1,11 +1,10 @@
-import re
-def converter_num(num: str):
-    regex = r"^[0-9]+(\.\+[0-9])?$"
+def converter_num(val: int | float):
     
-    if(not re.match(regex, num)):
-        return str(num)
+    if(not val): return None
         
     try:
-        return int(num)
-    except:
-        return float(num)
+        n = float(val)
+        
+        return int(n) if n.is_integer() else n
+    except (ValueError, TypeError):
+        return val
